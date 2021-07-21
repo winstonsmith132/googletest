@@ -89,10 +89,6 @@ class Foo {
   virtual int Bar() = 0;
 };
 """
-    # The destructor should be ignored.
-    self.assertEqualIgnoreLeadingWhitespace(
-        'MOCK_METHOD(int, Bar, (), (override));',
-        self.GenerateMethodSource(source))
 
   def testExplicitlyDefaultedConstructorsAndDestructor(self):
     source = """
